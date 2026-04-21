@@ -1,0 +1,72 @@
+.checkout-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: #f1f3f6;
+}
+
+/* LEFT */
+.checkout-left {
+  flex: 2;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.address-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.address-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* PRODUCT */
+.product-box {
+  display: flex;
+  gap: 15px;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+.product-box img {
+  width: 120px;
+  border-radius: 5px;
+}
+
+/* RIGHT */
+.checkout-right {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  height: fit-content;
+}
+
+.price-box {
+  margin-bottom: 20px;
+}
+
+.price-box p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 12px;
+  background: #fb641b; /* Flipkart style */
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.place-order-btn:hover {
+  background: #e55300;
+}

@@ -1,0 +1,119 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #111;
+  color: white;
+}
+
+/* Links section */
+.nav-links a {
+  margin-right: 25px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff5722;
+}
+
+/* Buttons section */
+.nav-actions button {
+  margin-left: 10px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* Cart button */
+.cart-btn {
+  background: white;
+  color: black;
+}
+
+/* Login button */
+.login-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+/* Signup button */
+.signup-btn {
+  background: #ff5722;
+  color: white;
+}
+
+.signup-btn:hover {
+  background: #e64a19;
+}
+
+/* Search bar */
+.search-bar {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 200px;
+  margin-left: 10px;
+}
+
+/* Search button */
+.search-btn {
+  padding: 8px 16px;
+  background: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background: #e64a19;
+}
+
+
+/* Sign Up button */
+.signup-btn {
+  background: #ff5722;
+  color: white;
+}
+
+.signup-btn:hover {
+  background: #e64a19;
+}
+
+/* 📱 Responsive for mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav-links {
+    margin-bottom: 15px;
+  }
+
+  .nav-links a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .nav-actions {
+    width: 100%;
+  }
+
+  .nav-actions button {
+    margin: 5px 5px 5px 0;
+  }
+}

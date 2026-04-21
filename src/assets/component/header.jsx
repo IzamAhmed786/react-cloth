@@ -1,15 +1,42 @@
 import React from "react";
-import login from "../pages/login";
+import { Link } from "react-router-dom";
+import "./Header.css";
 
-function Header() {
+function Header({ cartItems, searchQuery, setSearchQuery }) {
+
+  const handleSearch = () => {
+    // Search is handled by filtering in Product component
+  };
   return (
-    <div>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-      <button>🛒</button>
-      <button onClick={() => login()}>Login</button>
-      <button>Sign Up</button>
+    <div className="navbar">
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+      </div>
+
+      <div className="nav-actions">
+        <input 
+          type="text" 
+          placeholder="Search products..." 
+          className="search-bar" 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />   
+        <button className="search-btn" onClick={handleSearch}>Search</button>
+
+        <Link to="/cart">
+          <button className="cart-btn">🛒 ({cartItems.length})</button>
+        </Link>
+
+        <Link to="/login">
+          <button className="login-btn">Login</button>
+        </Link>
+
+        <Link to="/signup">
+          <button className="signup-btn">Sign Up</button>
+        </Link>
+      </div>
     </div>
   );
 }

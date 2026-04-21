@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Product.css";
 
-function Product() {
+function Product({ addToCart, searchQuery }) {
+  const navigate = useNavigate();
     let objproduct = [
   { image: "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=400", name: "Pen Graphic T-Shirt", size: "M", price: 999 },
   { image: "https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=400", name: "Classic White Tee", size: "L", price: 799 },
@@ -54,22 +57,28 @@ function Product() {
   { image: "https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=400", name: "Tangerine Graphic T-Shirt", size: "S", price: 1199 },
 ];
 
-    return (    
-        <div>
-            {objproduct.map((item,index)=>{
-                return(
-                    <div key={index}>
-                        <img src={item.image} alt={item.name} />
-                        <h2>{item.name}</h2>
-                        <p>Size: {item.size}</p>
-                        <p>Price: ₹{item.price}</p>
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                );
-            })}
+  const filteredProducts = objproduct.filter(product =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+  <div className="product-container">
+    {filteredProducts.map((item, index) => {
+      return (
+        <div className="product-card" key={index}>
+          <img src={item.image} alt={item.name} />
+          <h2>{item.name}</h2>
+          <p>Size: {item.size}</p>
+          <p className="price">₹{item.price}</p>
+          <div className="btn-group">
+            <button className="cart-btn" onClick={() => addToCart(item)}>Add to Cart</button>
+            <button className="buy-btn" onClick={() => navigate('/buynow', { state: item })}>Buy Now</button>
+          </div>
         </div>
-    );
+      );
+    })}
+  </div>
+);
 }
 
 export default Product;
