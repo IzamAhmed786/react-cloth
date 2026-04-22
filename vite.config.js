@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/react-cloth/',
-  // other configurations
-});
+  plugins: [react()],
+  base: "/react-cloth/",   // ✅ IMPORTANT
+})
